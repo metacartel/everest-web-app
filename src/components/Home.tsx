@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "../logo.svg";
+import everestPerson from "../EverestPerson.svg";
 
 export default function Home() {
   return (
     <div>
       <h2>Everest</h2>
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={everestPerson} className="App-logo" alt="Person on Everest" />
       <h3>Applications</h3>
       <p>DeFi</p>
       <h3>Infrastructure</h3>
