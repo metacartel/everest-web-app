@@ -9,6 +9,7 @@ Note: This project was bootstrapped with [Create React App](https://github.com/f
 - web3.js OR ethers.js (T.B.D.) for writing data to the contracts
 - Apollo Client for reading indexed data from the contracts via The Graph
 - React Router for routing
+- GitHub pages for hosting
 
 ## Available Scripts
 
