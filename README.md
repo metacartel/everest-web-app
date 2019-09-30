@@ -1,4 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Everest web app
+
+Note: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Tools
+
+- React
+- TypeScript
+- web3.js OR ethers.js (T.B.D.) for writing data to the contracts
+- Apollo Client for reading indexed data from the contracts via The Graph
+- React Router for routing
 
 ## Available Scripts
 
@@ -40,5 +50,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
