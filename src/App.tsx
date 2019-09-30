@@ -9,6 +9,7 @@ import CreateListing from "./components/CreateListing";
 import Proposal from "./components/Proposal";
 import Proposals from "./components/Proposals";
 import ENS from "./components/ENS";
+import StyledLink from "./components/StyledLink";
 
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
@@ -16,16 +17,6 @@ import ApolloClient from "apollo-boost";
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/ensdomains/ens"
 });
-
-function StyledLink(props: any) {
-  return (
-    <b>
-      <Link className="App-link" to={props.to}>
-        {props.label}
-      </Link>
-    </b>
-  );
-}
 
 function AppRouter() {
   return (
