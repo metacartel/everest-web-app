@@ -1,6 +1,6 @@
 import React from "react";
 import StyledLink from "../components/presentational/StyledLink";
-import { content } from "../constants/projects";
+import { contentTypes } from "../constants/projects";
 
 // TODO: Generalize this component to work for services, infrastructure, and content too, and just pass a type prop in
 
@@ -10,7 +10,7 @@ export default function Content({ match }: any) {
       <h2>Content</h2>
 
       {/* TODO: Maybe DRY this up with the mapping from the home page */}
-      {content.map((name, index) => {
+      {contentTypes.map((name, index) => {
         const filter = name.toLowerCase();
         return (
           <p key={name}>

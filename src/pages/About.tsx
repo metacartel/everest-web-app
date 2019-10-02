@@ -1,28 +1,25 @@
 import React from "react";
+import Project from "../components/presentational/Project";
+
+const aboutData = {
+  name: "Everest",
+  description:
+    "universally shared ‘yellowpages’ registry for eth community. we use fancy tech like TCRs and bonding curves. we’re hiring. dm @EverestProject. we probably won’t respond. if we collaborate, we can line up all our ducks in a row.",
+  twitter: "",
+  website: "",
+  tagline: "",
+  type: ""
+};
+
 export default function About() {
   return (
-    <div>
-      <h2>About</h2>
-      <p>
-        <b>Description:</b> universally shared ‘yellowpages’ registry for eth
-        community. we use fancy tech like TCRs and bonding curves. we’re hiring.
-        dm @dhole_club. we probably won’t respond. if we collaborate, we can
-        line up all our ducks in a row.
-      </p>
-      <p>
-        <b>Website:</b> You're on it dummy
-      </p>
-      <p>
-        <b>Twitter:</b>{" "}
-        <a
-          className="App-link"
-          href="https://twitter.com/dhole_club"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @dhole_club
-        </a>
-      </p>
-    </div>
+    <Project
+      name={aboutData.name}
+      tagline={aboutData.tagline}
+      website={aboutData.website}
+      twitter={aboutData.twitter}
+      description={aboutData.description}
+      type={aboutData.type}
+    />
   );
 }

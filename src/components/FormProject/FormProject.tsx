@@ -1,25 +1,13 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { ProjectInterface } from "../../types/ProjectInterface";
 
 import "./FormProject.css";
 
 const FormGeneric: React.FC<{ children: any }> = props => {
   return <div className={"container"}>{props.children}</div>;
 };
-
-// name
-// category
-// website
-// twitter
-// description
-
-interface FormProjectValues {
-  name: string;
-  website: string;
-  twitter: string;
-  description: string;
-}
 
 const NewProjectSchema = Yup.object().shape({
   name: Yup.string()
@@ -39,11 +27,13 @@ const NewProjectSchema = Yup.object().shape({
 });
 
 const FormProject: React.FC<{}> = () => {
-  const initialValues: FormProjectValues = {
+  const initialValues: ProjectInterface = {
     name: "",
     website: "https://",
     twitter: "",
-    description: ""
+    description: "",
+    type: "",
+    tagline: ""
   };
   return (
     <FormGeneric>
