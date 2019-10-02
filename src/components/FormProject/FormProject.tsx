@@ -18,6 +18,7 @@ interface FormProjectValues {
   name: string;
   website: string;
   twitter: string;
+  description: string;
 }
 
 const NewProjectSchema = Yup.object().shape({
@@ -31,14 +32,18 @@ const NewProjectSchema = Yup.object().shape({
   twitter: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
-    .required("Required")
+    .required("Required"),
+  description: Yup.string()
+    .min(2, "Too Short!")
+    .max(1000, "Too Long!")
 });
 
 const FormProject: React.FC<{}> = () => {
   const initialValues: FormProjectValues = {
     name: "",
     website: "https://",
-    twitter: ""
+    twitter: "",
+    description: ""
   };
   return (
     <FormGeneric>
