@@ -8,6 +8,10 @@ import Home from "./pages/Home";
 import CreateListing from "./pages/CreateListing";
 import Proposal from "./pages/Proposal";
 import Proposals from "./pages/Proposals";
+import Applications from "./pages/Applications";
+import Services from "./pages/Services";
+import Infrastructure from "./pages/Infrastructure";
+import Content from "./pages/Content";
 import ENS from "./pages/ENS";
 
 import StyledLink from "./components/presentational/StyledLink";
@@ -47,6 +51,10 @@ function AppRouter() {
               <Route path="/create-listing/" component={CreateListing} />
               <Route path="/proposals/:slug" component={Proposal} />
               <Route path="/proposals/" component={Proposals} />
+              <Route path="/applications/" component={Applications} />
+              <Route path="/services/" component={Services} />
+              <Route path="/infrastructure/" component={Infrastructure} />
+              <Route path="/content/" component={Content} />
               <Route path="/about/" component={About} />
               <Route path="/ens/" component={ENS} />
             </Switch>
