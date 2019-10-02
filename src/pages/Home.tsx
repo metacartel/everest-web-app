@@ -1,14 +1,13 @@
 import React from "react";
 import everestPerson from "../EverestPerson.svg";
 import StyledLink from "../components/presentational/StyledLink";
-import {
-  applications,
-  infrastructure,
-  services,
-  content
-} from "../constants/projects";
+// import {
+//   applicationTypes,
+//   infrastructureTypes,
+//   serviceTypes,
+//   contentTypes
+// } from "../constants/projects";
 
-console.log(applications);
 export default function Home() {
   return (
     <div>
@@ -18,7 +17,7 @@ export default function Home() {
       <h3>
         <StyledLink to={`/applications`} label={"Applications"} />
       </h3>
-      {/* {applications.map((name, index) => {
+      {/* {applicationTypes.map((name, index) => {
         const filter = name.toLowerCase();
         return (
           <p key={name}>
@@ -29,7 +28,7 @@ export default function Home() {
       <h3>
         <StyledLink to={`/infrastructure`} label={"Infrastructure"} />
       </h3>
-      {/* {infrastructure.map((name, index) => {
+      {/* {infrastructureTypes.map((name, index) => {
         const filter = name.toLowerCase();
         return (
           <p key={name}>
@@ -40,7 +39,7 @@ export default function Home() {
       <h3>
         <StyledLink to={`/services`} label={"Services"} />
       </h3>
-      {/* {services.map((name, index) => {
+      {/* {serviceTypes.map((name, index) => {
         const filter = name.toLowerCase();
         return (
           <p key={name}>
@@ -51,7 +50,7 @@ export default function Home() {
       <h3>
         <StyledLink to={`/content`} label={"Content"} />
       </h3>
-      {/* {content.map((name, index) => {
+      {/* {contentTypes.map((name, index) => {
         const filter = name.toLowerCase();
         return (
           <p key={name}>

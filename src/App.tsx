@@ -9,6 +9,7 @@ import CreateListing from "./pages/CreateListing";
 import Proposal from "./pages/Proposal";
 import Proposals from "./pages/Proposals";
 import Applications from "./pages/Applications";
+import Application from "./pages/Application";
 import Services from "./pages/Services";
 import Infrastructure from "./pages/Infrastructure";
 import Content from "./pages/Content";
@@ -49,8 +50,11 @@ function AppRouter() {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/create-listing/" component={CreateListing} />
+              {/* Note: Proposal must be before proposals */}
               <Route path="/proposals/:slug" component={Proposal} />
               <Route path="/proposals/" component={Proposals} />
+              {/* Note: Application must be before applications */}
+              <Route path="/applications/:slug" component={Application} />
               <Route path="/applications/" component={Applications} />
               <Route path="/services/" component={Services} />
               <Route path="/infrastructure/" component={Infrastructure} />
