@@ -1,5 +1,5 @@
 import React from "react";
-import ENSFetch from "./ENSFetch";
+import ENSFetch from "../components/stateful/ENSFetch";
 export default function ENS() {
   return (
     <div>
