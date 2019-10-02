@@ -1,15 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 
-import About from "./components/About";
-import Home from "./components/Home";
-import CreateListing from "./components/CreateListing";
-import Proposal from "./components/Proposal";
-import Proposals from "./components/Proposals";
-import ENS from "./components/ENS";
-import StyledLink from "./components/StyledLink";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import CreateListing from "./pages/CreateListing";
+import Proposal from "./pages/Proposal";
+import Proposals from "./pages/Proposals";
+import ENS from "./pages/ENS";
+
+import StyledLink from "./components/presentational/StyledLink";
 
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";

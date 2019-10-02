@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import StyledLink from "./StyledLink";
+import StyledLink from "../components/presentational/StyledLink";
 
 export default function Proposals({ match }: any) {
   return (
