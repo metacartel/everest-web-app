@@ -1,7 +1,10 @@
 import React from "react";
 import everestPerson from "../EverestPerson.svg";
 
-import { Box, Flex, Text, Link, Card, Image } from "rebass";
+import { Box, Flex, Text, Card, Image } from "rebass";
+import StyledLink from "../components/presentational/StyledLink";
+
+// TODO: Try using StyledLink from React Router again to see if it fixes 404
 
 import {
   applicationTypes,
@@ -26,17 +29,15 @@ export default function Home() {
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>
           <Text p={1} color="background" bg="muted">
             <h3>
-              <Link variant="link" href={`/applications`}>
-                Applications
-              </Link>
+              <StyledLink to={`/applications`}>Applications</StyledLink>
             </h3>
             {applicationTypes.map((name, index) => {
               const filter = name.toLowerCase().replace(/\s/g, "-");
               return (
                 <p key={name}>
-                  <Link variant="link" href={`/applications?type=${filter}`}>
+                  <StyledLink to={`/applications?type=${filter}`}>
                     {name}
-                  </Link>
+                  </StyledLink>
                 </p>
               );
             })}
@@ -45,17 +46,15 @@ export default function Home() {
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>
           <Text p={1} color="background" bg="muted">
             <h3>
-              <Link variant="link" href={`/infrastructure`}>
-                Infrastructure
-              </Link>
+              <StyledLink to={`/infrastructure`}>Infrastructure</StyledLink>
             </h3>
             {infrastructureTypes.map((name, index) => {
               const filter = name.toLowerCase().replace(/\s/g, "-");
               return (
                 <p key={name}>
-                  <Link variant="link" href={`/infrastructure?type=${filter}`}>
+                  <StyledLink to={`/infrastructure?type=${filter}`}>
                     {name}
-                  </Link>
+                  </StyledLink>
                 </p>
               );
             })}
@@ -64,17 +63,15 @@ export default function Home() {
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>
           <Text p={1} color="background" bg="muted">
             <h3>
-              <Link variant="link" href={`/services`}>
-                Services
-              </Link>
+              <StyledLink to={`/services`}>Services</StyledLink>
             </h3>
             {serviceTypes.map((name, index) => {
               const filter = name.toLowerCase().replace(/\s/g, "-");
               return (
                 <p key={name}>
-                  <Link variant="link" href={`/services?type=${filter}`}>
+                  <StyledLink to={`/services?type=${filter}`}>
                     {name}
-                  </Link>
+                  </StyledLink>
                 </p>
               );
             })}
@@ -83,17 +80,13 @@ export default function Home() {
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>
           <Text p={1} color="background" bg="muted">
             <h3>
-              <Link variant="link" href={`/content`}>
-                Content
-              </Link>{" "}
+              <StyledLink to={`/content`}>Content</StyledLink>{" "}
             </h3>
             {contentTypes.map((name, index) => {
               const filter = name.toLowerCase().replace(/\s/g, "-");
               return (
                 <p key={name}>
-                  <Link variant="link" href={`/content?type=${filter}`}>
-                    {name}
-                  </Link>
+                  <StyledLink to={`/content?type=${filter}`}>{name}</StyledLink>
                 </p>
               );
             })}

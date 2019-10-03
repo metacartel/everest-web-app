@@ -1,7 +1,7 @@
 import React from "react";
 import { infrastructureTypes, infrastructure } from "../constants/projects";
 
-import { Link } from "rebass";
+import StyledLink from "../components/presentational/StyledLink";
 // TODO: Generalize this component to work for services, infrastructure, and content too, and just pass a type prop in
 
 export default function Infrastructure({ match }: any) {
@@ -11,9 +11,7 @@ export default function Infrastructure({ match }: any) {
       {infrastructure.map(({ name }, index) => {
         return (
           <p key={index}>
-            <Link variant="link" href={`/infrastructure/${index}`}>
-              {name}
-            </Link>
+            <StyledLink to={`/infrastructure/${index}`}>{name}</StyledLink>
           </p>
         );
       })}
@@ -23,9 +21,9 @@ export default function Infrastructure({ match }: any) {
         const filter = name.toLowerCase().replace(/\s/g, "-");
         return (
           <p key={name}>
-            <Link variant="link" href={`/infrastructure?type=${filter}`}>
+            <StyledLink to={`/infrastructure?type=${filter}`}>
               {name}
-            </Link>
+            </StyledLink>
           </p>
         );
       })}

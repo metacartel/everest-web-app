@@ -6,6 +6,7 @@ export const preset = {
     background: "#fff",
     primary: "#07c",
     secondary: "#30c",
+    tertiary: "#dd0",
     muted: "#f6f6f9",
     gray: "#dddddf",
     highlight: "hsla(205, 100%, 40%, 0.125)"
