@@ -90,3 +90,58 @@ export const applications = [
     description: ""
   }
 ];
+
+export const proposals = [
+  {
+    name: "MetaCartel DAO",
+    type: "DAO",
+    tagline: "we like dapps",
+    website: "https://www.metacartel.org/",
+    twitter: "meta_cartel",
+    description: "we like dapps"
+  },
+  {
+    name: "PokeMol",
+    type: "DAO",
+    tagline: "pocket moloch",
+    website: "",
+    twitter: "PocketMoloch",
+    description:
+      "Open Source Mobile-first @MolochDAO frontend with @abridged_io contract wallets ftw. By @odyssyautomaton"
+  }
+];
+
+export const infrastructure = [
+  {
+    name: "The Graph",
+    type: "indexing",
+    tagline: "A query protocol for blockchains",
+    website: "https://thegraph.com/",
+    twitter: "graphprotocol",
+    description: "A query protocol for blockchains"
+  }
+];
+
+export const content = [
+  {
+    name: "EthHub",
+    type: "information",
+    tagline: "EthHub provides research and resources to learn about Ethereum",
+    website: "https://ethhub.io/",
+    twitter: "ethhub_io",
+    description:
+      "EthHub provides research and resources to learn about Ethereum"
+  }
+];
+
+export const services = [
+  {
+    name: "OpenZeppelin",
+    type: "audits",
+    tagline: "Security audits for distributed systems",
+    website: "https://openzeppelin.com/security-audits/",
+    twitter: "openzeppelin",
+    description:
+      "OpenZeppelin verifies that your distributed systems work as intended by performing an audit. Our engineers fully review your system’s architecture and codebase, and then write a thorough report that includes actionable feedback for every issue found. "
+  }
+];
