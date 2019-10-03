@@ -4,6 +4,10 @@ import { useParams } from "react-router-dom";
 import Project from "../components/presentational/Project";
 import { applications } from "../constants/projects";
 
+// TODO: Start here next. Make a project page
+// component that still uses project internally.
+// Have it take category as a prop
+
 export default function Application() {
   const { slug } = useParams();
   console.log({ slug });
