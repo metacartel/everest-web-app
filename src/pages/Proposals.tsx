@@ -1,6 +1,6 @@
 import React from "react";
 import { proposals } from "../constants/projects";
-import { Link } from "rebass";
+import StyledLink from "../components/presentational/StyledLink";
 export default function Proposals({ match }: any) {
   return (
     <div>
@@ -8,9 +8,7 @@ export default function Proposals({ match }: any) {
       {proposals.map(({ name }, index) => {
         return (
           <p key={index}>
-            <Link variant="link" href={`/proposals/${index}`}>
-              {name}
-            </Link>
+            <StyledLink to={`/proposals/${index}`}>{name}</StyledLink>
           </p>
         );
       })}

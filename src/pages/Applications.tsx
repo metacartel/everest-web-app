@@ -1,7 +1,8 @@
 import React, { useReducer } from "react";
 import { applicationTypes, applications } from "../constants/projects";
 
-import { Link, Flex, Box } from "rebass";
+import { Flex, Box } from "rebass";
+import StyledLink from "../components/presentational/StyledLink";
 
 // TODO: Generalize this component to work for services, infrastructure, and content too, and just pass a type prop in
 
@@ -83,9 +84,7 @@ export default function Applications({ match }: any) {
         {applications.map(({ name }, index) => {
           return (
             <p key={index}>
-              <Link variant="link" href={`/applications/${index}`}>
-                {name}
-              </Link>
+              <StyledLink to={`/applications/${index}`}>{name}</StyledLink>
             </p>
           );
         })}

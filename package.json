@@ -4,12 +4,6 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.1",
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.8",
-    "@types/react": "16.9.3",
-    "@types/react-dom": "16.9.1",
-    "@types/react-router-dom": "^5.1.0",
-    "@types/yup": "^0.26.24",
     "apollo-boost": "^0.4.4",
     "emotion-theming": "^10.0.19",
     "formik": "^2.0.1-rc.13",
@@ -17,9 +11,8 @@
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "react-router-dom": "^5.1.1",
-    "react-scripts": "3.1.2",
+    "react-scripts": "^3.1.2",
     "rebass": "^4.0.6",
-    "typescript": "3.6.3",
     "yup": "^0.27.0"
   },
   "scripts": {
@@ -47,7 +40,14 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.8",
+    "@types/react": "16.9.3",
+    "@types/react-dom": "16.9.1",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/yup": "^0.26.24",
     "@types/rebass": "^4.0.1",
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.1.1",
+    "typescript": "3.6.3"
   }
 }

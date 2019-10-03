@@ -22,14 +22,14 @@ const Project: React.FC<ProjectInterface> = props => {
         {name === "Everest" ? (
           "You're on it dummy"
         ) : (
-          <Link variant="link" href={website}>
+          <Link variant="nav" href={website}>
             {website}
           </Link>
         )}
       </p>
       <p>
         <b>Twitter:</b>{" "}
-        <Link variant="link" href={twitterUrl}>
+        <Link variant="nav" href={twitterUrl}>
           {twitterHandleDisplay}
         </Link>
       </p>
