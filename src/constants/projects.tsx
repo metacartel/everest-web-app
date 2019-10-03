@@ -16,11 +16,15 @@ export const applicationTypes = [
   "collectibles"
 ];
 
+// TODO: Get clever and handle camelCase or hypens in
+// multi-word categories
+// To achieve that, make this into an array of objects with
+// name and slug keys
 export const infrastructureTypes = [
-  "development framework",
+  "developmentframework",
   "sidechains",
-  "user authentication",
-  "state channels",
+  "userauthentication",
+  "statechannels",
   "onboarding",
   "testing"
 ];
@@ -164,3 +168,17 @@ export const services = [
       "OpenZeppelin verifies that your distributed systems work as intended by performing an audit. Our engineers fully review your system’s architecture and codebase, and then write a thorough report that includes actionable feedback for every issue found. "
   }
 ];
+
+export const projects = {
+  services,
+  infrastructure,
+  content,
+  applications
+};
+
+export const projectTypes = {
+  services: serviceTypes,
+  infrastructure: infrastructureTypes,
+  content: contentTypes,
+  applications: applicationTypes
+};

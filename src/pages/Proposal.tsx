@@ -15,6 +15,7 @@ export default function Proposal() {
   return (
     <Project
       name={proposal.name}
+      category={proposal.category}
       tagline={proposal.tagline}
       website={proposal.website}
       twitter={proposal.twitter}

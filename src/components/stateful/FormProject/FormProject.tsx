@@ -37,6 +37,7 @@ const StyledBox: React.FC<{ children: any }> = props => {
 const FormProject: React.FC<{}> = () => {
   const initialValues: ProjectInterface = {
     name: "",
+    category: "",
     website: "https://",
     twitter: "",
     description: "",
