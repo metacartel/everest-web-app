@@ -1,3 +1,10 @@
+export const projectCategories = [
+  "applications",
+  "content",
+  "services",
+  "infrastructure"
+];
+
 // Subtypes of each category
 
 export const applicationTypes = [
@@ -33,6 +40,7 @@ export const contentTypes = ["podcasts", "wikis", "events", "forums", "news"];
 export const applications = [
   {
     name: "MetaCartel DAO",
+    category: "applications",
     type: "DAO",
     tagline: "we like dapps",
     website: "https://www.metacartel.org/",
@@ -41,6 +49,7 @@ export const applications = [
   },
   {
     name: "PokeMol",
+    category: "applications",
     type: "DAO",
     tagline: "pocket moloch",
     website: "",
@@ -50,6 +59,7 @@ export const applications = [
   },
   {
     name: "Compound",
+    category: "applications",
     type: "DeFi",
     tagline: "Interest and borrowing, for the open financial system.",
     website: "https://compound.finance/",
@@ -59,6 +69,7 @@ export const applications = [
   },
   {
     name: "Mintbase",
+    category: "applications",
     type: "collectibles",
     tagline: "Digital assets minted and backed by you",
     website: "https://mintbase.io/",
@@ -67,6 +78,7 @@ export const applications = [
   },
   {
     name: "Pepper 4D",
+    category: "applications",
     type: "games",
     tagline: "gang gang gang",
     website: "",
@@ -75,6 +87,7 @@ export const applications = [
   },
   {
     name: "FrAnK",
+    category: "applications",
     type: "social",
     tagline: "what you looking at bish",
     website: "",
@@ -83,6 +96,7 @@ export const applications = [
   },
   {
     name: "YoloRekt",
+    category: "applications",
     type: "games",
     tagline: "we're definitely a finance game, not a casino",
     website: "",
@@ -94,6 +108,7 @@ export const applications = [
 export const proposals = [
   {
     name: "MetaCartel DAO",
+    category: "applications",
     type: "DAO",
     tagline: "we like dapps",
     website: "https://www.metacartel.org/",
@@ -102,6 +117,7 @@ export const proposals = [
   },
   {
     name: "PokeMol",
+    category: "applications",
     type: "DAO",
     tagline: "pocket moloch",
     website: "",
@@ -114,6 +130,7 @@ export const proposals = [
 export const infrastructure = [
   {
     name: "The Graph",
+    category: "infrastructure",
     type: "indexing",
     tagline: "A query protocol for blockchains",
     website: "https://thegraph.com/",
@@ -125,6 +142,7 @@ export const infrastructure = [
 export const content = [
   {
     name: "EthHub",
+    category: "content",
     type: "information",
     tagline: "EthHub provides research and resources to learn about Ethereum",
     website: "https://ethhub.io/",
@@ -137,6 +155,7 @@ export const content = [
 export const services = [
   {
     name: "OpenZeppelin",
+    category: "services",
     type: "audits",
     tagline: "Security audits for distributed systems",
     website: "https://openzeppelin.com/security-audits/",

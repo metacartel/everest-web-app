@@ -5,6 +5,7 @@ export interface ProjectInterface {
   website: string;
   twitter: string;
   description: string;
+  category: string;
   type: string;
   tagline: string;
 }

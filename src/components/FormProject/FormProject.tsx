@@ -50,6 +50,7 @@ const FormProject: React.FC<{}> = () => {
             <label htmlFor="name">Name</label>
             <Field type="text" id="name" name="name" placeholder="Name" />
             <ErrorMessage name="name" component="div" />
+            {/* TODO: Add category */}
             <label htmlFor="website">Website</label>
             <Field
               type="text"
