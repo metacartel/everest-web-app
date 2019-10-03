@@ -1,17 +1,18 @@
 import React from "react";
 import StyledLink from "../components/presentational/StyledLink";
+import { proposals } from "../constants/projects";
 
 export default function Proposals({ match }: any) {
   return (
     <div>
-      <h2>Proposals</h2>
-
-      <p>
-        <StyledLink to={`${match.url}/1`} label={"Project 1"} />
-      </p>
-      <p>
-        <StyledLink to={`${match.url}/2`} label={"Project 2"} />
-      </p>
+      <h1>Proposals</h1>
+      {proposals.map(({ name }, index) => {
+        return (
+          <p key={index}>
+            <StyledLink to={`/proposals/${index}`} label={name} />
+          </p>
+        );
+      })}
     </div>
   );
 }

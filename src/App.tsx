@@ -11,8 +11,11 @@ import Proposals from "./pages/Proposals";
 import Applications from "./pages/Applications";
 import Application from "./pages/Application";
 import Services from "./pages/Services";
+import Service from "./pages/Service";
 import Infrastructure from "./pages/Infrastructure";
+import InfrastructureSingle from "./pages/InfrastructureSingle";
 import Content from "./pages/Content";
+import ContentSingle from "./pages/ContentSingle";
 import ENS from "./pages/ENS";
 
 import StyledLink from "./components/presentational/StyledLink";
@@ -56,8 +59,14 @@ function AppRouter() {
               {/* Note: Application must be before applications */}
               <Route path="/applications/:slug" component={Application} />
               <Route path="/applications/" component={Applications} />
+              <Route path="/services/:slug" component={Service} />
               <Route path="/services/" component={Services} />
+              <Route
+                path="/infrastructure/:slug"
+                component={InfrastructureSingle}
+              />
               <Route path="/infrastructure/" component={Infrastructure} />
+              <Route path="/content/:slug" component={ContentSingle} />
               <Route path="/content/" component={Content} />
               <Route path="/about/" component={About} />
               <Route path="/ens/" component={ENS} />
