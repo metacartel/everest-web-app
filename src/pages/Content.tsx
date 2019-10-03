@@ -1,6 +1,6 @@
 import React from "react";
 import { contentTypes, content } from "../constants/projects";
-import { Link } from "rebass";
+import StyledLink from "../components/presentational/StyledLink";
 // TODO: Generalize this component to work for services, infrastructure, and content too, and just pass a type prop in
 
 export default function Content({ match }: any) {
@@ -10,9 +10,7 @@ export default function Content({ match }: any) {
       {content.map(({ name }, index) => {
         return (
           <p key={index}>
-            <Link variant="link" href={`/content/${index}`}>
-              {name}
-            </Link>
+            <StyledLink to={`/content/${index}`}>{name}</StyledLink>
           </p>
         );
       })}
@@ -22,9 +20,7 @@ export default function Content({ match }: any) {
         const filter = name.toLowerCase().replace(/\s/g, "-");
         return (
           <p key={name}>
-            <Link variant="link" href={`/content?type=${filter}`}>
-              {name}
-            </Link>
+            <StyledLink to={`/content?type=${filter}`}>{name}</StyledLink>
           </p>
         );
       })}

@@ -16,13 +16,15 @@ import Content from "./pages/Content";
 import ContentSingle from "./pages/ContentSingle";
 import ENS from "./pages/ENS";
 
+import StyledLink from "./components/presentational/StyledLink";
+
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 
 import { ThemeProvider } from "emotion-theming";
 import theme from "./theme";
 
-import { Box, Flex, Text, Link } from "rebass";
+import { Box, Flex, Text } from "rebass";
 
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/ensdomains/ens"
@@ -35,24 +37,14 @@ function AppRouter() {
         <Router>
           <div>
             <Flex px={2} color="white" bg="black" alignItems="center">
-              <Text p={2} fontWeight="bold">
-                <Link variant="nav" href="/">
-                  Everest
-                </Link>
+              <Text p={2} fontWeight="bold" color="primary">
+                <StyledLink to="/">Everest</StyledLink>
               </Text>
               <Box mx="auto" />
-              <Link variant="nav" href="/create-listing/">
-                Create a listing
-              </Link>
-              <Link variant="nav" href="/proposals/">
-                View proposals
-              </Link>
-              <Link variant="nav" href="/about/">
-                About
-              </Link>
-              <Link variant="nav" href="/ens/">
-                ENS names
-              </Link>
+              <StyledLink to="/create-listing">Create a listing</StyledLink>
+              <StyledLink to="/proposals">View proposals</StyledLink>
+              <StyledLink to="/about">About</StyledLink>
+              <StyledLink to="/ens">ENS names</StyledLink>
             </Flex>
             <header>
               <Switch>
