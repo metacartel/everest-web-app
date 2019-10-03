@@ -1,7 +1,7 @@
 import React from "react";
 import everestPerson from "../EverestPerson.svg";
 
-import { Box, Flex, Text, Card, Image } from "rebass";
+import { Box, Flex, Text, Image } from "rebass";
 import StyledLink from "../components/presentational/StyledLink";
 
 // TODO: Try using StyledLink from React Router again to see if it fixes 404

@@ -37,6 +37,7 @@ const StyledBox: React.FC<{ children: any }> = props => {
 const FormProject: React.FC<{}> = () => {
   const initialValues: ProjectInterface = {
     name: "",
+    category: "",
     website: "https://",
     twitter: "",
     description: "",
@@ -71,6 +72,8 @@ const FormProject: React.FC<{}> = () => {
               <StyledBox>
                 <ErrorMessage name="name" component="div" />
               </StyledBox>
+              {/* TODO: Add category */}
+
               <StyledBox>
                 <label htmlFor="website">Website</label>
               </StyledBox>

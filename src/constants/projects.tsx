@@ -1,3 +1,10 @@
+export const projectCategories = [
+  "applications",
+  "content",
+  "services",
+  "infrastructure"
+];
+
 // Subtypes of each category
 
 export const applicationTypes = [
@@ -9,11 +16,15 @@ export const applicationTypes = [
   "collectibles"
 ];
 
+// TODO: Get clever and handle camelCase or hypens in
+// multi-word categories
+// To achieve that, make this into an array of objects with
+// name and slug keys
 export const infrastructureTypes = [
-  "development framework",
+  "developmentframework",
   "sidechains",
-  "user authentication",
-  "state channels",
+  "userauthentication",
+  "statechannels",
   "onboarding",
   "testing"
 ];
@@ -33,6 +44,7 @@ export const contentTypes = ["podcasts", "wikis", "events", "forums", "news"];
 export const applications = [
   {
     name: "MetaCartel DAO",
+    category: "applications",
     type: "DAO",
     tagline: "we like dapps",
     website: "https://www.metacartel.org/",
@@ -41,6 +53,7 @@ export const applications = [
   },
   {
     name: "PokeMol",
+    category: "applications",
     type: "DAO",
     tagline: "pocket moloch",
     website: "",
@@ -50,6 +63,7 @@ export const applications = [
   },
   {
     name: "Compound",
+    category: "applications",
     type: "DeFi",
     tagline: "Interest and borrowing, for the open financial system.",
     website: "https://compound.finance/",
@@ -59,6 +73,7 @@ export const applications = [
   },
   {
     name: "Mintbase",
+    category: "applications",
     type: "collectibles",
     tagline: "Digital assets minted and backed by you",
     website: "https://mintbase.io/",
@@ -67,6 +82,7 @@ export const applications = [
   },
   {
     name: "Pepper 4D",
+    category: "applications",
     type: "games",
     tagline: "gang gang gang",
     website: "",
@@ -75,6 +91,7 @@ export const applications = [
   },
   {
     name: "FrAnK",
+    category: "applications",
     type: "social",
     tagline: "what you looking at bish",
     website: "",
@@ -83,6 +100,7 @@ export const applications = [
   },
   {
     name: "YoloRekt",
+    category: "applications",
     type: "games",
     tagline: "we're definitely a finance game, not a casino",
     website: "",
@@ -94,6 +112,7 @@ export const applications = [
 export const proposals = [
   {
     name: "MetaCartel DAO",
+    category: "applications",
     type: "DAO",
     tagline: "we like dapps",
     website: "https://www.metacartel.org/",
@@ -102,6 +121,7 @@ export const proposals = [
   },
   {
     name: "PokeMol",
+    category: "applications",
     type: "DAO",
     tagline: "pocket moloch",
     website: "",
@@ -114,6 +134,7 @@ export const proposals = [
 export const infrastructure = [
   {
     name: "The Graph",
+    category: "infrastructure",
     type: "indexing",
     tagline: "A query protocol for blockchains",
     website: "https://thegraph.com/",
@@ -125,6 +146,7 @@ export const infrastructure = [
 export const content = [
   {
     name: "EthHub",
+    category: "content",
     type: "information",
     tagline: "EthHub provides research and resources to learn about Ethereum",
     website: "https://ethhub.io/",
@@ -137,6 +159,7 @@ export const content = [
 export const services = [
   {
     name: "OpenZeppelin",
+    category: "services",
     type: "audits",
     tagline: "Security audits for distributed systems",
     website: "https://openzeppelin.com/security-audits/",
@@ -145,3 +168,17 @@ export const services = [
       "OpenZeppelin verifies that your distributed systems work as intended by performing an audit. Our engineers fully review your system’s architecture and codebase, and then write a thorough report that includes actionable feedback for every issue found. "
   }
 ];
+
+export const projects = {
+  services,
+  infrastructure,
+  content,
+  applications
+};
+
+export const projectTypes = {
+  services: serviceTypes,
+  infrastructure: infrastructureTypes,
+  content: contentTypes,
+  applications: applicationTypes
+};
