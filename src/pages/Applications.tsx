@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
-import StyledLink from "../components/presentational/StyledLink";
 import { applicationTypes, applications } from "../constants/projects";
+
+import { Link, Flex, Box } from "rebass";
 
 // TODO: Generalize this component to work for services, infrastructure, and content too, and just pass a type prop in
 
@@ -76,37 +77,43 @@ function reducer(state: any, action: any) {
 export default function Applications({ match }: any) {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div>
-      <h1>Applications</h1>
-      {applications.map(({ name }, index) => {
-        return (
-          <p key={index}>
-            <StyledLink to={`/applications/${index}`} label={name} />
-          </p>
-        );
-      })}
-      <h3>Filters</h3>
+    <Flex flexWrap="wrap">
+      <Box px={2} py={2} width={[1, 1 / 2, 3 / 4]}>
+        <h1>Applications</h1>
+        {applications.map(({ name }, index) => {
+          return (
+            <p key={index}>
+              <Link variant="link" href={`/applications/${index}`}>
+                {name}
+              </Link>
+            </p>
+          );
+        })}
+      </Box>
+      <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]} bg="muted">
+        <h3>Filters</h3>
 
-      <form>
-        {applicationTypes.map((applicationType, index) => (
-          <label key={index}>
-            {applicationType}
-            <input
-              name={applicationType}
-              type="checkbox"
-              // TODO: Make checked use state
-              checked={state[applicationType]}
-              onChange={e => {
-                console.log(e.target);
+        <form>
+          {applicationTypes.map((applicationType, index) => (
+            <label key={index}>
+              {applicationType}
+              <input
+                name={applicationType}
+                type="checkbox"
+                // TODO: Make checked use state
+                checked={state[applicationType]}
+                onChange={e => {
+                  console.log(e.target);
 
-                const action = `${applicationType}`;
-                dispatch({ type: applicationType });
-                // setEnabledTypes(e.target.value);
-              }}
-            />
-          </label>
-        ))}
-      </form>
-    </div>
+                  const action = `${applicationType}`;
+                  dispatch({ type: applicationType });
+                  // setEnabledTypes(e.target.value);
+                }}
+              />
+            </label>
+          ))}
+        </form>
+      </Box>
+    </Flex>
   );
 }

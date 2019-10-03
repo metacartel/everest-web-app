@@ -1,11 +1,6 @@
 import React from "react";
-import FormProject from "../components/FormProject/FormProject";
+import FormProject from "../components/stateful/FormProject/FormProject";
 
 export default function CreateListing() {
-  return (
-    <div>
-      <h2>Create a listing</h2>
-      <FormProject />
-    </div>
-  );
+  return <FormProject />;
 }
