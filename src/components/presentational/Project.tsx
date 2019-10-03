@@ -4,11 +4,13 @@
 import React from "react";
 import { ProjectInterface } from "../../types/ProjectInterface";
 
+import { Link } from "rebass";
+
 const Project: React.FC<ProjectInterface> = props => {
   // TODO: Use type or tagline?
   const { twitter, website, name, description } = props;
   const twitterUrl = `https://twitter.com/${twitter}`;
-  const twitterHandleDisplay = `@${twitter}`;
+  const twitterHandleDisplay = twitter ? `@${twitter}` : "";
   return (
     <div>
       <h2>{name === "Everest" ? "About" : name}</h2>
@@ -20,26 +22,16 @@ const Project: React.FC<ProjectInterface> = props => {
         {name === "Everest" ? (
           "You're on it dummy"
         ) : (
-          <a
-            className="App-link"
-            href={website}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link variant="link" href={website}>
             {website}
-          </a>
+          </Link>
         )}
       </p>
       <p>
         <b>Twitter:</b>{" "}
-        <a
-          className="App-link"
-          href={twitterUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link variant="link" href={twitterUrl}>
           {twitterHandleDisplay}
-        </a>
+        </Link>
       </p>
     </div>
   );
