@@ -21,10 +21,10 @@ export const applicationTypes = [
 // To achieve that, make this into an array of objects with
 // name and slug keys
 export const infrastructureTypes = [
-  "developmentframework",
+  "development framework",
   "sidechains",
-  "userauthentication",
-  "statechannels",
+  "user authentication",
+  "state channels",
   "onboarding",
   "testing"
 ];
@@ -176,7 +176,7 @@ export const projects = {
   applications
 };
 
-export const projectTypes = {
+export const projectSubtypes = {
   services: serviceTypes,
   infrastructure: infrastructureTypes,
   content: contentTypes,
