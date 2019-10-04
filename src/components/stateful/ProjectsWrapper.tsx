@@ -154,24 +154,28 @@ export default function ProjectsWrapper({ category, projectSubtype }: Props) {
 
         <form>
           {projectSubtypes[category].map((projectSubtype, index) => (
-            <label key={index}>
-              {projectSubtype}
-              <input
-                name={projectSubtype}
-                type="checkbox"
-                // TODO: Make checked use state
-                checked={state[getNonUserFacingSlug(projectSubtype)]}
-                onChange={e => {
-                  console.log(e.target);
-                  // Note: Right now the regex doesn't do anything
-                  // since the input is always forced to be one word
-                  // This may change if we want to handle spaces differently
-                  const actionName = `${getNonUserFacingSlug(projectSubtype)}`;
-                  dispatch({ type: actionName });
-                  // setEnabledTypes(e.target.value);
-                }}
-              />
-            </label>
+            <p key={index}>
+              <label>
+                {projectSubtype}
+                <input
+                  name={projectSubtype}
+                  type="checkbox"
+                  // TODO: Make checked use state
+                  checked={state[getNonUserFacingSlug(projectSubtype)]}
+                  onChange={e => {
+                    console.log(e.target);
+                    // Note: Right now the regex doesn't do anything
+                    // since the input is always forced to be one word
+                    // This may change if we want to handle spaces differently
+                    const actionName = `${getNonUserFacingSlug(
+                      projectSubtype
+                    )}`;
+                    dispatch({ type: actionName });
+                    // setEnabledTypes(e.target.value);
+                  }}
+                />
+              </label>
+            </p>
           ))}
         </form>
       </Box>
