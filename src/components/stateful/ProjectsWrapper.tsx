@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { projectTypes, projects } from "../../constants/projects";
+import { projectSubtypes, projects } from "../../constants/projects";
 
 import { Flex, Box } from "rebass";
 import StyledLink from "../presentational/StyledLink";
@@ -10,11 +10,11 @@ import { Category } from "../../types/Category";
 
 // TODO: Make dynamic
 interface ApplicationFilterState {
-  DAOs: boolean;
-  DeFi: boolean;
+  daos: boolean;
+  defi: boolean;
   games: boolean;
   social: boolean;
-  DEX: boolean;
+  dex: boolean;
   collectibles: boolean;
 }
 
@@ -32,7 +32,7 @@ interface ServicesFilterState {
   legal: boolean;
   design: boolean;
   accounting: boolean;
-  PR: boolean;
+  pr: boolean;
 }
 
 interface InfrastructureFilterState {
@@ -45,11 +45,11 @@ interface InfrastructureFilterState {
 }
 
 const initialStateApplications: ApplicationFilterState = {
-  DeFi: true,
-  DAOs: true,
+  defi: true,
+  daos: true,
   games: true,
   social: true,
-  DEX: true,
+  dex: true,
   collectibles: true
 };
 
@@ -68,7 +68,7 @@ const initialStateServices: ServicesFilterState = {
   legal: true,
   design: true,
   accounting: true,
-  PR: true
+  pr: true
 };
 
 const initialStateContent: ContentFilterState = {
@@ -86,19 +86,57 @@ const initialState: any = {
   content: initialStateContent
 };
 
-function reducer(state: any, action: any) {
-  console.log(action.type);
-  return {
-    ...state,
-    ...{
-      [action.type]: !state[action.type]
-    }
-  };
+function getNonUserFacingSlug(projectName: string) {
+  return projectName.toLowerCase().replace(/\s/g, "");
 }
 
-export default function ProjectsWrapper(props: any) {
-  const category: Category = props.category;
-  const [state, dispatch] = useReducer(reducer, initialState[category]);
+function reducer(state: any, action: any) {
+  console.log(action.type);
+  let newState;
+  // Used for setting all values at once
+  // based on query param
+  if (action.type.indexOf("single") !== -1) {
+    console.log("Special action");
+    return state;
+  } else {
+    // Used when user toggles
+    newState = {
+      ...state,
+      ...{
+        [action.type]: !state[action.type]
+      }
+    };
+    console.log(newState);
+    return newState;
+  }
+}
+
+interface Props {
+  category: Category;
+  projectSubtype?: string;
+}
+
+// (No hyphens is more useful internally because it lets you directly use
+// the name as the key in an object without the editor getting upset)
+function getNonUserFacingSlugFromUserFacing(projectName: string) {
+  return projectName.toLowerCase().replace(/-/g, "");
+}
+
+export default function ProjectsWrapper({ category, projectSubtype }: Props) {
+  console.log({ projectSubtype });
+  const initialStateForCategory = initialState[category];
+  console.log({ initialStateForCategory });
+  const [state, dispatch] = useReducer(reducer, initialStateForCategory);
+
+  // TODO: Use React Router query param to determine initial state
+  // Do something like this but with useEffect so it's after
+  // the first render:
+  // if (!!projectSubtype) {
+  //   const projectSubtypeSlug = getNonUserFacingSlugFromUserFacing(
+  //     projectSubtype
+  //   );
+  //   dispatch({ type: `single-projectSubtypeSlug` });
+  // }
   return (
     <Flex flexWrap="wrap">
       <Box px={2} py={2} width={[1, 1 / 2, 3 / 4]}>
@@ -115,20 +153,20 @@ export default function ProjectsWrapper(props: any) {
         <h3>Filters</h3>
 
         <form>
-          {projectTypes[category].map((projectType, index) => (
+          {projectSubtypes[category].map((projectSubtype, index) => (
             <label key={index}>
-              {projectType}
+              {projectSubtype}
               <input
-                name={projectType}
+                name={projectSubtype}
                 type="checkbox"
                 // TODO: Make checked use state
-                checked={state[projectType]}
+                checked={state[getNonUserFacingSlug(projectSubtype)]}
                 onChange={e => {
                   console.log(e.target);
                   // Note: Right now the regex doesn't do anything
                   // since the input is always forced to be one word
                   // This may change if we want to handle spaces differently
-                  const actionName = `${projectType}`.replace(/\s/g, "-");
+                  const actionName = `${getNonUserFacingSlug(projectSubtype)}`;
                   dispatch({ type: actionName });
                   // setEnabledTypes(e.target.value);
                 }}

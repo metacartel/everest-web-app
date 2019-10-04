@@ -13,6 +13,10 @@ import {
   contentTypes
 } from "../constants/projects";
 
+function getUserFacingSlug(projectName: string) {
+  return projectName.toLowerCase().replace(/\s/g, "-");
+}
+
 export default function Home() {
   return (
     <div>
@@ -32,10 +36,10 @@ export default function Home() {
               <StyledLink to={`/applications`}>Applications</StyledLink>
             </h3>
             {applicationTypes.map((name, index) => {
-              const filter = name.toLowerCase().replace(/\s/g, "-");
+              const filter = getUserFacingSlug(name);
               return (
                 <p key={name}>
-                  <StyledLink to={`/applications?type=${filter}`}>
+                  <StyledLink to={`/applications?projectSubtype=${filter}`}>
                     {name}
                   </StyledLink>
                 </p>
@@ -49,10 +53,10 @@ export default function Home() {
               <StyledLink to={`/infrastructure`}>Infrastructure</StyledLink>
             </h3>
             {infrastructureTypes.map((name, index) => {
-              const filter = name.toLowerCase().replace(/\s/g, "-");
+              const filter = getUserFacingSlug(name);
               return (
                 <p key={name}>
-                  <StyledLink to={`/infrastructure?type=${filter}`}>
+                  <StyledLink to={`/infrastructure?projectSubtype=${filter}`}>
                     {name}
                   </StyledLink>
                 </p>
@@ -66,10 +70,10 @@ export default function Home() {
               <StyledLink to={`/services`}>Services</StyledLink>
             </h3>
             {serviceTypes.map((name, index) => {
-              const filter = name.toLowerCase().replace(/\s/g, "-");
+              const filter = getUserFacingSlug(name);
               return (
                 <p key={name}>
-                  <StyledLink to={`/services?type=${filter}`}>
+                  <StyledLink to={`/services?projectSubtype=${filter}`}>
                     {name}
                   </StyledLink>
                 </p>
@@ -83,10 +87,12 @@ export default function Home() {
               <StyledLink to={`/content`}>Content</StyledLink>{" "}
             </h3>
             {contentTypes.map((name, index) => {
-              const filter = name.toLowerCase().replace(/\s/g, "-");
+              const filter = getUserFacingSlug(name);
               return (
                 <p key={name}>
-                  <StyledLink to={`/content?type=${filter}`}>{name}</StyledLink>
+                  <StyledLink to={`/content?projectSubtype=${filter}`}>
+                    {name}
+                  </StyledLink>
                 </p>
               );
             })}
