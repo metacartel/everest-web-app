@@ -24,7 +24,7 @@ export default function Home() {
       <Image
         src={everestPerson}
         sx={{
-          width: ["90%", "40%", "10%"],
+          width: ["100%", "40%", "10%"],
           borderRadius: 8
         }}
       />

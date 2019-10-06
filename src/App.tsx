@@ -24,7 +24,7 @@ import ApolloClient from "apollo-boost";
 import { ThemeProvider } from "emotion-theming";
 import theme from "./theme";
 
-import { Box, Flex, Text } from "rebass";
+import { Box, Flex } from "rebass";
 
 const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/ensdomains/ens"
@@ -36,15 +36,32 @@ function AppRouter() {
       <ThemeProvider theme={theme}>
         <Router>
           <div>
-            <Flex px={2} color="white" bg="black" alignItems="center">
-              <Text p={2} fontWeight="bold" color="primary">
+            {/* TODO: Extract nav bar into component */}
+            <Flex
+              flexWrap="wrap"
+              px={2}
+              color="white"
+              bg="black"
+              alignItems="center"
+            >
+              {/* TODO: Handle look when text wraps to two lines
+              or prevent that from happening */}
+              <Box width={[1, 1 / 5, 1 / 6]}>
                 <StyledLink to="/">Everest</StyledLink>
-              </Text>
+              </Box>
               <Box mx="auto" />
-              <StyledLink to="/create-listing">Create a listing</StyledLink>
-              <StyledLink to="/proposals">View proposals</StyledLink>
-              <StyledLink to="/about">About</StyledLink>
-              <StyledLink to="/ens">ENS names</StyledLink>
+              <Box width={[1, 1 / 5, 1 / 6]}>
+                <StyledLink to="/create-listing">Create a listing</StyledLink>
+              </Box>
+              <Box width={[1, 1 / 5, 1 / 6]}>
+                <StyledLink to="/proposals">View proposals</StyledLink>
+              </Box>
+              <Box width={[1, 1 / 5, 1 / 6]}>
+                <StyledLink to="/about">About</StyledLink>
+              </Box>
+              <Box width={[1, 1 / 5, 1 / 6]}>
+                <StyledLink to="/ens">ENS names</StyledLink>
+              </Box>
             </Flex>
             <header>
               <Switch>

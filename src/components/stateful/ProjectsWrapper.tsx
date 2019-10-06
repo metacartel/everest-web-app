@@ -156,7 +156,7 @@ export default function ProjectsWrapper({ category, projectSubtype }: Props) {
           {projectSubtypes[category].map((projectSubtype, index) => (
             <p key={index}>
               <label>
-                {projectSubtype}
+                {projectSubtype}{" "}
                 <input
                   name={projectSubtype}
                   type="checkbox"
