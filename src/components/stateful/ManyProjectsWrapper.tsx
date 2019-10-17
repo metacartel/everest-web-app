@@ -1,10 +1,11 @@
 import React, { useReducer } from "react";
-import { projectSubtypes, projects } from "../../constants/projects";
 
 import { Flex, Box } from "rebass";
 import StyledLink from "../presentational/StyledLink";
 
 import { Category } from "../../types/Category";
+
+import { getProjects, getProjectSubtypes } from "../../helpers/functions";
 
 // TODO: Generalize this component to work for services, infrastructure, and content too, and just pass a type prop in
 
@@ -141,7 +142,7 @@ export default function ProjectsWrapper({ category, projectSubtype }: Props) {
     <Flex flexWrap="wrap">
       <Box px={2} py={2} width={[1, 1 / 2, 3 / 4]}>
         <h1>{category}</h1>
-        {projects[category].map(({ name }, index) => {
+        {getProjects(category).map(({ name, index }) => {
           // TODO: Start using an index from the object
           // itself, and not using the index from the
           // map operation
@@ -156,7 +157,7 @@ export default function ProjectsWrapper({ category, projectSubtype }: Props) {
         <h3>Filters</h3>
 
         <form>
-          {projectSubtypes[category].map((projectSubtype, index) => (
+          {getProjectSubtypes(category).map((projectSubtype, index) => (
             <p key={index}>
               <label>
                 {projectSubtype}{" "}

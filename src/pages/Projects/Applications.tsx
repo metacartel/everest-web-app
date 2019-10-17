@@ -1,6 +1,6 @@
 import React from "react";
 
-import ProjectsWrapper from "../../components/stateful/ProjectsWrapper";
+import ProjectsWrapper from "../../components/stateful/ManyProjectsWrapper";
 
 import { Category } from "../../types/Category";
 

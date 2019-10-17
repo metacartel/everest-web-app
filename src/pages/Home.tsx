@@ -33,10 +33,12 @@ export default function Home() {
       {/* TODO: Maybe DRY these four sections up with a map */}
       <Flex flexWrap="wrap" mx={-2}>
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>
-          <Text p={1} color="background" bg="muted">
+          <Text p={1} color="background" bg="highlight">
             <h3>
               <StyledLink to={`/applications`}>Applications</StyledLink>
             </h3>
+          </Text>
+          <Text p={1} color="background" bg="muted">
             {applicationTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (
@@ -50,10 +52,12 @@ export default function Home() {
           </Text>
         </Box>
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>
-          <Text p={1} color="background" bg="muted">
+          <Text p={1} color="background" bg="highlight">
             <h3>
               <StyledLink to={`/infrastructure`}>Infrastructure</StyledLink>
             </h3>
+          </Text>
+          <Text p={1} color="background" bg="muted">
             {infrastructureTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (
@@ -67,10 +71,12 @@ export default function Home() {
           </Text>
         </Box>
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>
-          <Text p={1} color="background" bg="muted">
+          <Text p={1} color="background" bg="highlight">
             <h3>
               <StyledLink to={`/services`}>Services</StyledLink>
             </h3>
+          </Text>
+          <Text p={1} color="background" bg="muted">
             {serviceTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (
@@ -84,10 +90,12 @@ export default function Home() {
           </Text>
         </Box>
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>
-          <Text p={1} color="background" bg="muted">
+          <Text p={1} color="background" bg="highlight">
             <h3>
-              <StyledLink to={`/content`}>Content</StyledLink>{" "}
+              <StyledLink to={`/content`}>Content</StyledLink>
             </h3>
+          </Text>
+          <Text p={1} color="background" bg="muted">
             {contentTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (

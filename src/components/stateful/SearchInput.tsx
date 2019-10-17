@@ -1,39 +1,10 @@
 import React, { FunctionComponent, useState } from "react";
 
-import { projectList } from "../../constants/projects";
-
 import StyledLink from "../presentational/StyledLink";
 
 import { ProjectInterface } from "../../types/ProjectInterface";
 
-function filterProjects(searchText: string, maxResults: number) {
-  return projectList
-    .filter(project => {
-      if (project.name.toLowerCase().includes(searchText.toLowerCase())) {
-        return true;
-      }
-      if (project.type.includes(searchText)) {
-        return true;
-      }
-      if (project.category.includes(searchText)) {
-        return true;
-      }
-      if (project.description.includes(searchText)) {
-        return true;
-      }
-      if (project.tagline.includes(searchText)) {
-        return true;
-      }
-      if (project.twitter.includes(searchText)) {
-        return true;
-      }
-      if (project.website.includes(searchText)) {
-        return true;
-      }
-      return false;
-    })
-    .slice(0, maxResults);
-}
+import { filterProjects } from "../../helpers/functions";
 
 // TODO: Consider extracting the search input component into
 // a presentational component where the function to handle changes
@@ -43,7 +14,7 @@ const SearchInput: FunctionComponent<{}> = () => {
   const [searchResults, setSearchResults] = useState<ProjectInterface[]>([]);
 
   const handleNewSearchText = (searchText: string) => {
-    const filterProjectsResult = filterProjects(searchText, 20);
+    const filterProjectsResult = filterProjects(searchText, 8);
     console.log(filterProjectsResult);
 
     setSearchText(searchText);
@@ -62,7 +33,7 @@ const SearchInput: FunctionComponent<{}> = () => {
           onChange={e => handleNewSearchText(e.target.value)}
         />
         {/* Maybe DRY up the way this list is shown */}
-        {searchResults.map(({ name, category }, index) => {
+        {searchResults.map(({ name, category, index }) => {
           // TODO: Lookup the project type in the right category
           // to get the right index, or even better, move the
           // project indexing system to something doesn't have a separate

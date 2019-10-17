@@ -41,8 +41,9 @@ export const serviceTypes = [
 export const contentTypes = ["podcasts", "wikis", "events", "forums", "news"];
 
 // The projects themselves:
-export const applications = [
+const applications = [
   {
+    index: "1",
     name: "MetaCartel DAO",
     category: "applications",
     type: "DAO",
@@ -52,6 +53,7 @@ export const applications = [
     description: "we like dapps"
   },
   {
+    index: "2",
     name: "PokeMol",
     category: "applications",
     type: "DAO",
@@ -62,6 +64,7 @@ export const applications = [
       "Open Source Mobile-first @MolochDAO frontend with @abridged_io contract wallets ftw. By @odyssyautomaton"
   },
   {
+    index: "3",
     name: "Compound",
     category: "applications",
     type: "DeFi",
@@ -72,6 +75,7 @@ export const applications = [
       "Compound is an open-source, autonomous protocol built for developers, to unlock a universe of new financial applications. Interest and borrowing, for the open financial system."
   },
   {
+    index: "4",
     name: "Mintbase",
     category: "applications",
     type: "collectibles",
@@ -81,6 +85,7 @@ export const applications = [
     description: "Digital assets minted and backed by you"
   },
   {
+    index: "5",
     name: "Pepper 4D",
     category: "applications",
     type: "games",
@@ -90,6 +95,7 @@ export const applications = [
     description: ""
   },
   {
+    index: "6",
     name: "FrAnK",
     category: "applications",
     type: "social",
@@ -99,6 +105,7 @@ export const applications = [
     description: ""
   },
   {
+    index: "7",
     name: "YoloRekt",
     category: "applications",
     type: "games",
@@ -109,30 +116,9 @@ export const applications = [
   }
 ];
 
-export const proposals = [
+const infrastructure = [
   {
-    name: "MetaCartel DAO",
-    category: "applications",
-    type: "DAO",
-    tagline: "we like dapps",
-    website: "https://www.metacartel.org/",
-    twitter: "meta_cartel",
-    description: "we like dapps"
-  },
-  {
-    name: "PokeMol",
-    category: "applications",
-    type: "DAO",
-    tagline: "pocket moloch",
-    website: "",
-    twitter: "PocketMoloch",
-    description:
-      "Open Source Mobile-first @MolochDAO frontend with @abridged_io contract wallets ftw. By @odyssyautomaton"
-  }
-];
-
-export const infrastructure = [
-  {
+    index: "8",
     name: "The Graph",
     category: "infrastructure",
     type: "indexing",
@@ -143,8 +129,9 @@ export const infrastructure = [
   }
 ];
 
-export const content = [
+const content = [
   {
+    index: "9",
     name: "EthHub",
     category: "content",
     type: "information",
@@ -156,8 +143,9 @@ export const content = [
   }
 ];
 
-export const services = [
+const services = [
   {
+    index: "10",
     name: "OpenZeppelin",
     category: "services",
     type: "audits",
@@ -169,12 +157,29 @@ export const services = [
   }
 ];
 
-export const projects = {
-  services,
-  infrastructure,
-  content,
-  applications
-};
+export const proposals = [
+  {
+    index: "11",
+    name: "MetaCartel DAO",
+    category: "applications",
+    type: "DAO",
+    tagline: "we like dapps",
+    website: "https://www.metacartel.org/",
+    twitter: "meta_cartel",
+    description: "we like dapps"
+  },
+  {
+    index: "12",
+    name: "PokeMol",
+    category: "applications",
+    type: "DAO",
+    tagline: "pocket moloch",
+    website: "",
+    twitter: "PocketMoloch",
+    description:
+      "Open Source Mobile-first @MolochDAO frontend with @abridged_io contract wallets ftw. By @odyssyautomaton"
+  }
+];
 
 // TODO: Decide if this spread approach is the preferred
 // way to do this concat
