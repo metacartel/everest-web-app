@@ -9,7 +9,8 @@ const aboutData = {
   twitter: "Everest_TCR",
   website: "",
   tagline: "",
-  type: ""
+  type: "",
+  index: "0"
 };
 
 export default function About() {
@@ -22,6 +23,7 @@ export default function About() {
       twitter={aboutData.twitter}
       description={aboutData.description}
       type={aboutData.type}
+      index={aboutData.index}
     />
   );
 }

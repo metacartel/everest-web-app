@@ -21,6 +21,7 @@ export default function Proposal() {
       twitter={proposal.twitter}
       description={proposal.description}
       type={proposal.type}
+      index={proposal.index}
     />
   );
 }

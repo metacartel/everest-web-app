@@ -1,6 +1,6 @@
 import React from "react";
 
-import ProjectWrapper from "../components/stateful/ProjectWrapper";
+import ProjectWrapper from "../../components/stateful/ProjectWrapper";
 
 export default function Application() {
   const inputCategory = "applications";

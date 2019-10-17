@@ -8,4 +8,5 @@ export interface ProjectInterface {
   category: string;
   type: string;
   tagline: string;
+  index: string;
 }

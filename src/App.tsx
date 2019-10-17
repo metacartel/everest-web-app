@@ -4,16 +4,20 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import CreateListing from "./pages/CreateListing";
+
 import Proposal from "./pages/Proposal";
 import Proposals from "./pages/Proposals";
-import Applications from "./pages/Applications";
-import Application from "./pages/Application";
-import Services from "./pages/Services";
-import Service from "./pages/Service";
-import Infrastructure from "./pages/Infrastructure";
-import InfrastructureSingle from "./pages/InfrastructureSingle";
-import Content from "./pages/Content";
-import ContentSingle from "./pages/ContentSingle";
+
+import Application from "./pages/Project/Application";
+import Service from "./pages/Project/Service";
+import InfrastructureSingle from "./pages/Project/InfrastructureSingle";
+import ContentSingle from "./pages/Project/ContentSingle";
+
+import Applications from "./pages/Projects/Applications";
+import Services from "./pages/Projects/Services";
+import Infrastructure from "./pages/Projects/Infrastructure";
+import Content from "./pages/Projects/Content";
+
 import ENS from "./pages/ENS";
 
 import StyledLink from "./components/presentational/StyledLink";

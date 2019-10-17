@@ -13,7 +13,7 @@ const Project: React.FC<ProjectInterface> = props => {
   const twitterHandleDisplay = twitter ? `@${twitter}` : "";
   return (
     <div>
-      <h2>{name === "Everest" ? "About" : name}</h2>
+      <h2>{name === "Everest" ? "About Everest" : name}</h2>
       <p>
         <b>Description:</b> {description}
       </p>

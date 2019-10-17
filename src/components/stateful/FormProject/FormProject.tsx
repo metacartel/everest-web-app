@@ -42,7 +42,8 @@ const FormProject: React.FC<{}> = () => {
     twitter: "",
     description: "",
     type: "",
-    tagline: ""
+    tagline: "",
+    index: ""
   };
   return (
     <FormGeneric>
