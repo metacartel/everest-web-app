@@ -44,6 +44,7 @@ export const contentTypes = ["podcasts", "wikis", "events", "forums", "news"];
 const applications = [
   {
     index: "1",
+    status: "approved",
     name: "MetaCartel DAO",
     category: "applications",
     type: "DAO",
@@ -54,6 +55,7 @@ const applications = [
   },
   {
     index: "2",
+    status: "approved",
     name: "PokeMol",
     category: "applications",
     type: "DAO",
@@ -65,6 +67,7 @@ const applications = [
   },
   {
     index: "3",
+    status: "approved",
     name: "Compound",
     category: "applications",
     type: "DeFi",
@@ -76,6 +79,7 @@ const applications = [
   },
   {
     index: "4",
+    status: "approved",
     name: "Mintbase",
     category: "applications",
     type: "collectibles",
@@ -86,6 +90,7 @@ const applications = [
   },
   {
     index: "5",
+    status: "approved",
     name: "Pepper 4D",
     category: "applications",
     type: "games",
@@ -96,6 +101,7 @@ const applications = [
   },
   {
     index: "6",
+    status: "approved",
     name: "FrAnK",
     category: "applications",
     type: "social",
@@ -106,6 +112,7 @@ const applications = [
   },
   {
     index: "7",
+    status: "approved",
     name: "YoloRekt",
     category: "applications",
     type: "games",
@@ -119,6 +126,7 @@ const applications = [
 const infrastructure = [
   {
     index: "8",
+    status: "approved",
     name: "The Graph",
     category: "infrastructure",
     type: "indexing",
@@ -126,12 +134,26 @@ const infrastructure = [
     website: "https://thegraph.com/",
     twitter: "graphprotocol",
     description: "A query protocol for blockchains"
+  },
+  {
+    index: "80",
+    status: "approved",
+    name: "Connext",
+    category: "infrastructure",
+    type: "state channels",
+    tagline:
+      "An infrastructure layer that scales Ethereum by enabling instant, low cost transactions.",
+    website: "https://connext.network/",
+    twitter: "ConnextNetwork",
+    description:
+      "An infrastructure layer that scales Ethereum by enabling instant, low cost transactions."
   }
 ];
 
 const content = [
   {
     index: "9",
+    status: "approved",
     name: "EthHub",
     category: "content",
     type: "information",
@@ -140,12 +162,26 @@ const content = [
     twitter: "ethhub_io",
     description:
       "EthHub provides research and resources to learn about Ethereum"
+  },
+  {
+    index: "90",
+    status: "approved",
+    name: "Wizard of Dapps",
+    category: "content",
+    type: "podcasts",
+    tagline:
+      "A end user focused podcast about how decentralised applications are built. Tech stacks, business models & user growth. Hosted by @pet3rpan_ & @b_dsylva",
+    website: "https://wizardofdapps.fm/",
+    twitter: "wizardofdapps",
+    description:
+      "A end user focused podcast about how decentralised applications are built. Tech stacks, business models & user growth. Hosted by @pet3rpan_ & @b_dsylva"
   }
 ];
 
 const services = [
   {
     index: "10",
+    status: "approved",
     name: "OpenZeppelin",
     category: "services",
     type: "audits",
@@ -154,12 +190,26 @@ const services = [
     twitter: "openzeppelin",
     description:
       "OpenZeppelin verifies that your distributed systems work as intended by performing an audit. Our engineers fully review your system’s architecture and codebase, and then write a thorough report that includes actionable feedback for every issue found. "
+  },
+  {
+    index: "101",
+    status: "approved",
+    name: "Paul Cowgill",
+    category: "services",
+    type: "development",
+    tagline: "Freelance full-stack Ethereum software engineering",
+    website: "https://cowgill.io",
+    twitter: "paulcowgill",
+    description: "Freelance full-stack Ethereum software engineering"
   }
 ];
 
-export const proposals = [
+// Proposal status an enum of possible states like
+// rejected, voting, reveal, approved, etc.
+const proposals = [
   {
     index: "11",
+    status: "voting",
     name: "MetaCartel DAO",
     category: "applications",
     type: "DAO",
@@ -170,6 +220,7 @@ export const proposals = [
   },
   {
     index: "12",
+    status: "voting",
     name: "PokeMol",
     category: "applications",
     type: "DAO",
@@ -187,7 +238,8 @@ export const projectList = [
   ...applications,
   ...services,
   ...content,
-  ...infrastructure
+  ...infrastructure,
+  ...proposals
 ];
 
 export const projectSubtypes = {
