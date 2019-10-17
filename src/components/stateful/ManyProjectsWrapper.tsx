@@ -5,7 +5,10 @@ import StyledLink from "../presentational/StyledLink";
 
 import { Category } from "../../types/Category";
 
-import { getProjects, getProjectSubtypes } from "../../helpers/functions";
+import {
+  getProjectsByCategory,
+  getProjectSubtypes
+} from "../../helpers/functions";
 
 // TODO: Generalize this component to work for services, infrastructure, and content too, and just pass a type prop in
 
@@ -142,7 +145,7 @@ export default function ProjectsWrapper({ category, projectSubtype }: Props) {
     <Flex flexWrap="wrap">
       <Box px={2} py={2} width={[1, 1 / 2, 3 / 4]}>
         <h1>{category}</h1>
-        {getProjects(category).map(({ name, index }) => {
+        {getProjectsByCategory(category).map(({ name, index }) => {
           // TODO: Start using an index from the object
           // itself, and not using the index from the
           // map operation

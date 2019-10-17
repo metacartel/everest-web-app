@@ -99,6 +99,8 @@ export default function Home() {
             {contentTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (
+                // TODO: A div shouldn't be a descendant of
+                // a p element
                 <p key={name}>
                   <StyledLink to={`/content?projectSubtype=${filter}`}>
                     {name}
