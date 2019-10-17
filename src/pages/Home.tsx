@@ -3,8 +3,9 @@ import everestPerson from "../EverestPerson.svg";
 
 import { Box, Flex, Text, Image } from "rebass";
 import StyledLink from "../components/presentational/StyledLink";
-
 // TODO: Try using StyledLink from React Router again to see if it fixes 404
+
+import SearchInput from "../components/stateful/SearchInput";
 
 import {
   applicationTypes,
@@ -28,6 +29,7 @@ export default function Home() {
           borderRadius: 8
         }}
       />
+      <SearchInput />
       {/* TODO: Maybe DRY these four sections up with a map */}
       <Flex flexWrap="wrap" mx={-2}>
         <Box px={2} py={2} width={[1, 1 / 2, 1 / 4]}>

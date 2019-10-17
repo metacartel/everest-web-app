@@ -1,8 +1,8 @@
 import React from "react";
 
-import ProjectsWrapper from "../components/stateful/ProjectsWrapper";
+import ProjectsWrapper from "../../components/stateful/ProjectsWrapper";
 
-import { Category } from "../types/Category";
+import { Category } from "../../types/Category";
 
 export default function Infrastructure({ location }: any) {
   let params = new URLSearchParams(location.search);

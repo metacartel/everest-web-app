@@ -142,6 +142,9 @@ export default function ProjectsWrapper({ category, projectSubtype }: Props) {
       <Box px={2} py={2} width={[1, 1 / 2, 3 / 4]}>
         <h1>{category}</h1>
         {projects[category].map(({ name }, index) => {
+          // TODO: Start using an index from the object
+          // itself, and not using the index from the
+          // map operation
           return (
             <p key={index}>
               <StyledLink to={`/${category}/${index}`}>{name}</StyledLink>

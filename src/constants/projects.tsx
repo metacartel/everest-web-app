@@ -176,6 +176,15 @@ export const projects = {
   applications
 };
 
+// TODO: Decide if this spread approach is the preferred
+// way to do this concat
+export const projectList = [
+  ...applications,
+  ...services,
+  ...content,
+  ...infrastructure
+];
+
 export const projectSubtypes = {
   services: serviceTypes,
   infrastructure: infrastructureTypes,
