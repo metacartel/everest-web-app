@@ -32,7 +32,8 @@ export const getProjectByIndex = (index: string) => {
 
 export const getOpenProposals = () => {
   return projectList.filter(project => {
-    if (project.status === "voting") {
+    const { status } = project;
+    if (status === "voting" || status === "queued") {
       return true;
     }
     return false;

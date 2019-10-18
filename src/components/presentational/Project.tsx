@@ -7,13 +7,13 @@ import { ProjectInterface } from "../../types/ProjectInterface";
 import { Link } from "rebass";
 
 const Project: React.FC<ProjectInterface> = props => {
-  // TODO: Use type or tagline?
-  const { twitter, website, name, description } = props;
+  const { twitter, website, name, status, description } = props;
   const twitterUrl = `https://twitter.com/${twitter}`;
   const twitterHandleDisplay = twitter ? `@${twitter}` : "";
   return (
     <div>
       <h2>{name === "Everest" ? "About Everest" : name}</h2>
+      {status === "voting" || status === "queued" ? <h4>{status}</h4> : ""}
       <p>
         <b>Description:</b> {description}
       </p>
@@ -23,7 +23,10 @@ const Project: React.FC<ProjectInterface> = props => {
           "You're on it dummy"
         ) : (
           <Link variant="nav" target="_blank" href={website}>
-            {website}
+            {website
+              .replace("https://", "")
+              .replace("www.", "")
+              .replace("/", "")}
           </Link>
         )}
       </p>
