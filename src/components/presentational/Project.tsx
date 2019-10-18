@@ -23,10 +23,7 @@ const Project: React.FC<ProjectInterface> = props => {
           "You're on it dummy"
         ) : (
           <Link variant="nav" target="_blank" href={website}>
-            {website
-              .replace("https://", "")
-              .replace("www.", "")
-              .replace("/", "")}
+            {website.replace("https://", "").replace("www.", "")}
           </Link>
         )}
       </p>
