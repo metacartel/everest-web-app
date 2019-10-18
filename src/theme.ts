@@ -9,7 +9,8 @@ export const preset = {
     tertiary: "#dd0",
     muted: "#f6f6f9",
     gray: "#dddddf",
-    highlight: "hsla(205, 100%, 40%, 0.125)"
+    highlight: "hsla(205, 100%, 40%, 0.125)",
+    dimmed: "hsla(120, 100%, 75%, 0.3)"
   },
   fonts: {
     body: "system-ui, sans-serif",

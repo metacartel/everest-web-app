@@ -220,7 +220,7 @@ const proposals = [
   },
   {
     index: "12",
-    status: "voting",
+    status: "queued",
     name: "PokeMol",
     category: "applications",
     type: "DAO",

@@ -9,4 +9,5 @@ export interface ProjectInterface {
   type: string;
   tagline: string;
   index: string;
+  status?: string;
 }
