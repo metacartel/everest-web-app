@@ -12,7 +12,7 @@ import { useTheme } from "emotion-theming";
 // Note: Using a .jsx version of this file
 // as opposed to TypeScript because of:
 // https://github.com/alampros/react-confetti/issues/72
-import Confetti from "../presentational/Confetti.jsx";
+import Confetti from "../presentational/Confetti";
 
 const FormGeneric: React.FC<{ children: any }> = props => {
   return <div>{props.children}</div>;

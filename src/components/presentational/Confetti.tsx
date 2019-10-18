@@ -3,14 +3,19 @@ import useWindowSize from "react-use/lib/useWindowSize";
 import ReactConfetti from "react-confetti";
 
 import { useTheme } from "emotion-theming";
+import { boolean } from "yup";
+import { string } from "prop-types";
 
 // Note: Using a .jsx version of this file
 // as opposed to TypeScript because of:
 // https://github.com/alampros/react-confetti/issues/72
 
-export default ({ start, variant }) => {
+const Confetti: React.FC<{ start: boolean; variant: string }> = ({
+  start,
+  variant
+}) => {
   const { width, height } = useWindowSize();
-  const theme = useTheme();
+  const theme: any = useTheme();
   const { colors } = theme;
   const { primary, secondary, tertiary } = colors;
 
@@ -36,7 +41,9 @@ export default ({ start, variant }) => {
             ? height * 0.25
             : _variant === "bottom"
             ? height * 0.75
-            : height * 0.5
+            : height * 0.5,
+        w: 10,
+        h: 10
       }}
       initialVelocityX={20}
       initialVelocityY={40}
@@ -46,3 +53,5 @@ export default ({ start, variant }) => {
     />
   ) : null;
 };
+
+export default Confetti;
