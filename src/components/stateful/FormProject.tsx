@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { ProjectInterface } from "../../types/ProjectInterface";
 
-import { Flex, Box } from "rebass";
+import { Flex, Box, Button } from "rebass";
 
 import { css } from "emotion";
 
@@ -56,6 +56,27 @@ const LabelBox: React.FC<{
   );
 };
 
+const ErrorBox: React.FC<{
+  name: string;
+  component: string;
+}> = ({ name, component }) => {
+  return (
+    <StyledBox>
+      <ErrorMessage name="name" component="div" />
+    </StyledBox>
+  );
+};
+
+const padding = 1.5;
+const fontSize = 1;
+const borderRadius = 0.25;
+const height = 6.25;
+const widthText = 15;
+
+// Note: Hacky below. Figure out why text area width
+// behaves differently
+const widthTextArea = widthText + 4;
+
 const StyledTextFieldBox: React.FC<{
   name: string;
   placeholder: string;
@@ -66,11 +87,11 @@ const StyledTextFieldBox: React.FC<{
     <StyledBox>
       <Field
         className={css`
-          padding: 24px;
+          padding: ${padding}em;
           background-color: ${theme.colors.muted};
-          font-size: 16px;
-          width: 100%;
-          border-radius: 4px;
+          font-size: ${fontSize}em;
+          width: ${widthText}em;
+          border-radius: ${borderRadius}em;
           &:hover {
             color: ${theme.colors.tertiary};
           }
@@ -95,12 +116,12 @@ const StyledTextAreaFieldBox: React.FC<{
     <StyledBox>
       <Field
         className={css`
-          padding: 24px;
+          padding: ${padding}em;
           background-color: ${theme.colors.muted};
-          font-size: 16px;
-          height: 100px;
-          width: 100%;
-          border-radius: 4px;
+          font-size: ${fontSize}em;
+          height: ${height}em;
+          width: ${widthTextArea}em;
+          border-radius: ${borderRadius}em;
           &:hover {
             color: ${theme.colors.tertiary};
           }
@@ -152,36 +173,36 @@ const FormProject: React.FC<{}> = () => {
                 <h2>Create a listing</h2>
                 <LabelBox htmlFor="name" label="Name" />
                 <StyledTextFieldBox name="name" placeholder="Name" />
-                <StyledBox>
-                  <ErrorMessage name="name" component="div" />
-                </StyledBox>
+                <ErrorBox name="name" component="div" />
                 {/* TODO: Add category */}
 
                 <LabelBox htmlFor="website" label="Website" />
                 <StyledTextFieldBox name="website" placeholder="https://" />
-                <StyledBox>
-                  <ErrorMessage name="website" component="div" />
-                </StyledBox>
+                <ErrorBox name="website" component="div" />
+
                 <LabelBox htmlFor="twitter" label="Twitter" />
                 <StyledTextFieldBox name="twitter" placeholder="@jack" />
-                <StyledBox>
-                  <ErrorMessage name="twitter" component="div" />
-                </StyledBox>
+                <ErrorBox name="twitter" component="div" />
+
                 <LabelBox htmlFor="description" label="Description" />
                 <StyledTextAreaFieldBox
                   name="description"
                   placeholder="This project..."
                 />
-                <StyledBox>
-                  <ErrorMessage name="name" component="div" />
-                </StyledBox>
+                <ErrorBox name="description" component="div" />
+
                 <StyledBox>
                   {status && status.msg && <div>{status.msg}</div>}
                 </StyledBox>
                 <StyledBox>
-                  <button type="submit" disabled={isSubmitting}>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    variant="primary"
+                    mr={2}
+                  >
                     Submit
-                  </button>
+                  </Button>
                 </StyledBox>
               </Form>
             </Flex>
