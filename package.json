@@ -10,9 +10,11 @@
     "formik": "^2.0.1-rc.13",
     "graphql": "^14.5.8",
     "react": "^16.10.0",
+    "react-confetti": "^4.0.1",
     "react-dom": "^16.10.0",
     "react-router-dom": "^5.1.1",
     "react-scripts": "^3.1.2",
+    "react-use": "^12.7.1",
     "rebass": "^4.0.6",
     "yup": "^0.27.0"
   },

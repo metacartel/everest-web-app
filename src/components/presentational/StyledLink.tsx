@@ -14,7 +14,6 @@ export default function StyledLink(props: any) {
         <Link
           to={props.to}
           className={css`
-            padding: 24px;
             color: ${theme.colors.primary};
             font-size: 16px;
             border-radius: 4px;
