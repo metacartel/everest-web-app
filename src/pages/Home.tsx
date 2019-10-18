@@ -1,5 +1,5 @@
 import React from "react";
-import everestPerson from "../EverestPerson.svg";
+import everestPerson from "../images/EverestPerson.svg";
 
 import { Box, Flex, Text, Image } from "rebass";
 import StyledLink from "../components/presentational/StyledLink";
