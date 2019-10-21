@@ -72,10 +72,7 @@ const fontSize = 1;
 const borderRadius = 0.25;
 const height = 6.25;
 const widthText = 15;
-
-// Note: Hacky below. Figure out why text area width
-// behaves differently
-const widthTextArea = widthText + 4;
+const widthTextArea = widthText;
 
 const StyledTextFieldBox: React.FC<{
   name: string;
