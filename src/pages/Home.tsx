@@ -42,11 +42,12 @@ export default function Home() {
             {applicationTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (
-                <p key={name}>
-                  <StyledLink to={`/applications?projectSubtype=${filter}`}>
-                    {name}
-                  </StyledLink>
-                </p>
+                <StyledLink
+                  to={`/applications?projectSubtype=${filter}`}
+                  key={name}
+                >
+                  <p>{name}</p>
+                </StyledLink>
               );
             })}
           </Text>
@@ -61,11 +62,12 @@ export default function Home() {
             {infrastructureTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (
-                <p key={name}>
-                  <StyledLink to={`/infrastructure?projectSubtype=${filter}`}>
-                    {name}
-                  </StyledLink>
-                </p>
+                <StyledLink
+                  to={`/infrastructure?projectSubtype=${filter}`}
+                  key={name}
+                >
+                  <p>{name} </p>
+                </StyledLink>
               );
             })}
           </Text>
@@ -80,11 +82,12 @@ export default function Home() {
             {serviceTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (
-                <p key={name}>
-                  <StyledLink to={`/services?projectSubtype=${filter}`}>
-                    {name}
-                  </StyledLink>
-                </p>
+                <StyledLink
+                  to={`/services?projectSubtype=${filter}`}
+                  key={name}
+                >
+                  <p> {name} </p>
+                </StyledLink>
               );
             })}
           </Text>
@@ -99,13 +102,9 @@ export default function Home() {
             {contentTypes.map((name, index) => {
               const filter = getUserFacingSlug(name);
               return (
-                // TODO: A div shouldn't be a descendant of
-                // a p element
-                <p key={name}>
-                  <StyledLink to={`/content?projectSubtype=${filter}`}>
-                    {name}
-                  </StyledLink>
-                </p>
+                <StyledLink to={`/content?projectSubtype=${filter}`} key={name}>
+                  <p>{name}</p>
+                </StyledLink>
               );
             })}
           </Text>

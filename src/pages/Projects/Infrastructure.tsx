@@ -7,7 +7,7 @@ import { Category } from "../../types/Category";
 export default function Infrastructure({ location }: any) {
   let params = new URLSearchParams(location.search);
   const projectSubtype: string | null = params.get("projectSubtype");
-  const category: Category = Category.infrastructure;
+  const category: Category = Category.INFRASTRUCTURE;
 
   return projectSubtype ? (
     <ProjectsWrapper category={category} projectSubtype={projectSubtype} />

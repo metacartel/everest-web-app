@@ -1,6 +1,13 @@
 import { projectList, projectSubtypes } from "../constants/projects";
 import { Category } from "../types/Category";
 
+import { ethers } from "ethers";
+
+//////
+// Getters and filters for projects, for now from constants
+// and eventually from The Graph
+//////
+
 export const getProjectsByCategory = (projectCategory: string) => {
   return projectList.filter(project => {
     if (
@@ -75,3 +82,28 @@ export const filterProjects = (searchText: string, maxResults: number) => {
     })
     .slice(0, maxResults);
 };
+
+//////
+// Handling MetaMask and ethers.js:
+//////
+
+export function shortenAddress(address: string, digits = 4) {
+  if (!isAddress(address)) {
+    throw Error(`Invalid 'address' parameter '${address}'.`);
+  }
+  return `${address.substring(0, digits + 2)}...${address.substring(
+    42 - digits
+  )}`;
+}
+
+export function isAddress(value: string | null | undefined) {
+  // TODO: Make sure this is handling both null and undefined
+  if (!value) {
+    return false;
+  }
+  try {
+    return ethers.utils.getAddress(value.toLowerCase());
+  } catch {
+    return false;
+  }
+}

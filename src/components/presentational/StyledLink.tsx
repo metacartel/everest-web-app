@@ -9,23 +9,21 @@ import { useTheme } from "emotion-theming";
 export default function StyledLink(props: any) {
   const theme: any = useTheme();
   return (
-    <b>
+    <Link
+      to={props.to}
+      className={css`
+        color: ${theme.colors.primary};
+        font-size: 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        &:hover {
+          color: ${theme.colors.tertiary};
+        }
+      `}
+    >
       <Text p={2} fontWeight="bold" color="primary">
-        <Link
-          to={props.to}
-          className={css`
-            color: ${theme.colors.primary};
-            font-size: 16px;
-            border-radius: 4px;
-            text-decoration: none;
-            &:hover {
-              color: ${theme.colors.tertiary};
-            }
-          `}
-        >
-          {props.children}
-        </Link>
+        {props.children}
       </Text>
-    </b>
+    </Link>
   );
 }

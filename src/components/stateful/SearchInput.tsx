@@ -4,7 +4,7 @@ import StyledLink from "../presentational/StyledLink";
 
 import { ProjectInterface } from "../../types/ProjectInterface";
 
-import { filterProjects } from "../../helpers/functions";
+import { filterProjects } from "../../helpers/helpers";
 
 // TODO: Consider extracting the search input component into
 // a presentational component where the function to handle changes

@@ -1,10 +1,11 @@
 import React from "react";
+
+// TODO: Potentially remove react-use dep
 import useWindowSize from "react-use/lib/useWindowSize";
+
 import ReactConfetti from "react-confetti";
 
 import { useTheme } from "emotion-theming";
-import { boolean } from "yup";
-import { string } from "prop-types";
 
 // Note: Using a .jsx version of this file
 // as opposed to TypeScript because of:

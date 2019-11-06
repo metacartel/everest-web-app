@@ -6,7 +6,7 @@ import { Box, Flex } from "rebass";
 import Project from "../components/presentational/Project";
 import VotingBox from "../components/presentational/VotingBox";
 
-import { getProjectByIndex } from "../helpers/functions";
+import { getProjectByIndex } from "../helpers/helpers";
 
 export default function Proposal() {
   const { slug } = useParams();

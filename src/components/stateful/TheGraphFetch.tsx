@@ -2,11 +2,13 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
-import { getOpenProposals } from "../../helpers/functions";
+import { getOpenProposals } from "../../helpers/helpers";
+
+import Spinner from "../presentational/Spinner";
 
 import InlineStyledLink from "../presentational/InlineStyledLink";
 
-const EXCHANGE_RATES = gql`
+const DOMAINS = gql`
   {
     domains(first: 10) {
       name
@@ -15,9 +17,12 @@ const EXCHANGE_RATES = gql`
 `;
 
 export default function TheGraphFetch() {
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+  // If we were using the data from The Graph yet,
+  // we would use the data variable as well
+  // const { loading, error, data } = useQuery(DOMAINS);
+  const { loading, error } = useQuery(DOMAINS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner />;
   if (error) return <p>Error</p>;
 
   return (
