@@ -5,6 +5,8 @@ import { ProjectInterface } from "../../types/ProjectInterface";
 
 import { Flex, Box, Button } from "rebass";
 
+import Web3Status from "./Web3Status";
+
 import { css } from "emotion";
 
 import { useTheme } from "emotion-theming";
@@ -167,6 +169,7 @@ const FormProject: React.FC<{}> = () => {
               justifyContent="center"
             >
               <Form>
+                <Web3Status />
                 <h2>Create a listing</h2>
                 <LabelBox htmlFor="name" label="Name" />
                 <StyledTextFieldBox name="name" placeholder="Name" />

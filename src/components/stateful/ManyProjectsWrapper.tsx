@@ -8,7 +8,7 @@ import { Category } from "../../types/Category";
 import {
   getProjectsByCategory,
   getProjectSubtypes
-} from "../../helpers/functions";
+} from "../../helpers/helpers";
 
 // TODO: Generalize this component to work for services, infrastructure, and content too, and just pass a type prop in
 
@@ -94,7 +94,7 @@ function getNonUserFacingSlug(projectName: string) {
   return projectName.toLowerCase().replace(/\s/g, "");
 }
 
-function reducer(state: any, action: any) {
+function filterReducer(state: any, action: any) {
   console.log(action.type);
   let newState;
   // Used for setting all values at once
@@ -122,15 +122,15 @@ interface Props {
 
 // (No hyphens is more useful internally because it lets you directly use
 // the name as the key in an object without the editor getting upset)
-function getNonUserFacingSlugFromUserFacing(projectName: string) {
-  return projectName.toLowerCase().replace(/-/g, "");
-}
+// function getNonUserFacingSlugFromUserFacing(projectName: string) {
+//   return projectName.toLowerCase().replace(/-/g, "");
+// }
 
 export default function ProjectsWrapper({ category, projectSubtype }: Props) {
   console.log({ projectSubtype });
   const initialStateForCategory = initialState[category];
   console.log({ initialStateForCategory });
-  const [state, dispatch] = useReducer(reducer, initialStateForCategory);
+  const [state, dispatch] = useReducer(filterReducer, initialStateForCategory);
 
   // TODO: Use React Router query param to determine initial state
   // Do something like this but with useEffect so it's after
